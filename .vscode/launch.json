@@ -1,0 +1,31 @@
+{
+    "configurations": [
+        {
+            "name": "Launch (Debug)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Redirect stdin from <basename>.in",
+                    "text": "set args < ${fileBasenameNoExtension}.in",
+                    "ignoreFailures": false
+                }
+            ],
+            "preLaunchTask": "Sanitize"
+        }
+    ],
+    "version": "2.0.0"
+}

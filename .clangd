@@ -1,0 +1,4 @@
+CompileFlags:
+  Add: [-std=c++20, -DBZ, -Wall, -Werror, -Wextra, -Wno-unused-result, -Wno-sign-compare]
+Diagnostics:
+  UnusedIncludes: None

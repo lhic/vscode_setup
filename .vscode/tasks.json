@@ -1,0 +1,140 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Release",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-std=c++20",
+                "-DBZ",
+                "-fdiagnostics-color=always",
+                "-Wall",
+                "-Wextra",
+                "-Wno-unused-result",
+                "-Wno-sign-compare",
+                "-O3",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "Release"
+        },
+        {
+            "type": "cppbuild",
+            "label": "Debug",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-std=c++20",
+                "-DBZ",
+                "-fdiagnostics-color=always",
+                "-Wall",
+                "-Wextra",
+                "-Wno-unused-result",
+                "-Wno-sign-compare",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "Debug"
+        },
+        {
+            "type": "cppbuild",
+            "label": "Sanitize",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-std=c++20",
+                "-DBZ",
+                "-fsanitize=address",
+                "-fsanitize=undefined",
+                "-fdiagnostics-color=always",
+                "-Wall",
+                "-Wextra",
+                "-Wno-unused-result",
+                "-Wno-sign-compare",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Sanitize"
+        },
+        {
+            "type": "cppbuild",
+            "label": "G++ debug",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-std=c++20",
+                "-DBZ",
+                "-D_GLIBCXX_DEBUG",
+                "-Wall",
+                "-Wextra",
+                "-Wno-unused-result",
+                "-Wno-sign-compare",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "G++ debug"
+        },
+        {
+            "type": "shell",
+            "label": "Run with input",
+            "command": "./${fileBasenameNoExtension}",
+            "args": [
+                "<",
+                "${fileBasenameNoExtension}.in"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "none",
+                "isDefault": true
+            }
+        }
+    ],
+    "version": "2.0.0"
+}
