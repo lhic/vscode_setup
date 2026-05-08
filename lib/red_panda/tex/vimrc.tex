@@ -1,0 +1,35 @@
+\begin{minted}[showspaces,breakafter=de]{vim}
+
+set nocp
+filetype plugin indent on
+syn on
+set ts=4 sw=4 ai si ar aw nu is mouse=a
+let c_no_curly_error=1
+colorscheme peachpuff
+
+ino {<CR> {<CR>}<ESC>O
+
+let tmp=":set makeprg=g++\\ -DBZ\\ -Wall\\ -W\\ -Wno-sign-compare\\ %\\ -o\\ %<\\ "
+nm <C-b> :exe tmp . "-O2" <CR>:make <CR>:cwindow <CR>
+nm <F9> :exe tmp . "-D_GLIBCXX_DEBUG\\ -fsanitize=undefined\\ -O2" <CR>:make <CR>:cwindow <CR>
+nm <C-F9> :exe tmp . "-D_GLIBCXX_DEBUG\\ -fsanitize=undefined\\ -g" <CR>:make <CR>:cwindow <CR>
+
+nm <F5> :!./%< <CR>
+nm <C-F5> :!gdb --tui %< <CR>
+
+nm <F6> :!time ./%< < %<.in <CR>
+nm <C-F6> :!gdb --tui -ex 'set args < %<.in' %<<CR>
+
+au BufNewFile *.cpp 0r ~/.vim/tmp.cpp
+
+vm <C-c> "+y
+nm <C-a> ggVG
+
+nm <C-v> "+gP
+im <C-v> <ESC>"+gPi
+
+nm <C-p> :!printfile % <CR>
+nm <C-S-F12> :!submit % && printfile % <CR>
+
+
+\end{minted}

@@ -1,0 +1,107 @@
+\documentclass[landscape, 8pt, a4paper, oneside, twocolumn]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T2A]{fontenc}
+
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{minted}
+\usepackage{titletoc}
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{tikz}
+
+\geometry{
+		margin=2cm,
+		left=1cm,
+		right=1cm
+}
+
+\pagestyle{fancy}
+\lhead{Moscow SU Red Panda}
+\rhead{\thepage\ of \pageref{LastPage}}
+\fancyfoot{}
+\dottedcontents{section}[3.0em]{\bfseries}{2.5em}{0pc}
+\dottedcontents{subsection}[4.5em]{}{3.5em}{0.75pc}
+\setlength{\columnseprule}{0.4pt}
+\setlength\parindent{0pt}
+\setminted{breaklines, tabsize=4}
+
+\newcommand{\addalgorithm}[2]{
+	\subsection{#1}
+	\inputminted{C++}{#2}
+}
+
+\newcommand{\addtex}[2]{
+	\subsection{#1}
+	\input{#2}
+}
+
+\title{Team Notebook of Moscow SU Red Panda}
+\date{Compiled on \today}
+
+\begin{document}
+	\section{Environment}
+	%TODO middle mouse button
+	\addtex{Linux}{tex/linux.tex}
+	\addtex{.vimrc}{tex/vimrc.tex}
+	\addalgorithm{C++ template}{algo/template.cpp}
+	\newpage
+	\tableofcontents
+	\addtex{Table}{tex/table.tex}
+	\newpage
+	\section{Math}
+	\addtex{Integrals}{tex/integrals.tex}
+	\section{Tricks}
+	\addalgorithm{GCC}{algo/gcc.cpp}
+	\addalgorithm{Mult}{algo/mult.cpp}
+	\section{Popular Algos}
+	\addalgorithm{Hungary}{algo/hungary.cpp}
+	\addalgorithm{CHT}{algo/chtVlad.cpp}
+	\section{Geometry}
+	\addalgorithm{HPI}{algo/hpint.cpp}
+	\addtex{Radical Axis}{tex/radax.tex}
+	\addalgorithm{Hull3d}{algo/lewin3d.cpp}
+	\addtex{Another Hull3d}{tex/hull3d2.tex}
+	\addalgorithm{Simplex}{algo/simplex.cpp}
+	\section{Strings}
+	\addalgorithm{Eertree}{algo/palin.cpp}
+	\addalgorithm{SufArray}{algo/sufarray.cpp}
+	\addalgorithm{SufAuto}{algo/sufauto.cpp}
+	\addalgorithm{SufTree}{algo/suftree.cpp}
+	\addalgorithm{Tandem}{algo/tandem.cpp}
+	\section{Number Theory}
+	\addtex{Numbers}{tex/nt.tex}
+	\addalgorithm{Prefix Inverse O(n)}{algo/revOn.cpp}
+	\addalgorithm{Gonchar Fedor}{algo/fedor.cpp}
+	\addtex{Primes < n}{tex/primes.tex}
+	\section{Numerical}
+	\addtex{Runge-Kutta}{tex/rk.tex}
+	\addalgorithm{Gaussian Quadrature}{algo/int.cpp}
+	\section{Other}
+	\addalgorithm{Walsh-Hadamard}{algo/Walsh-Hadamard.cpp}
+	\addalgorithm{Global MinCut}{algo/wagner.cpp}
+	\addtex{Matroids}{tex/matroids.tex}
+	\addtex{Min Mean Cycle}{tex/meancycle.tex}
+	\addalgorithm{General Matching}{algo/match.cpp}
+	\addtex{Java}{tex/java.tex}
+	\addalgorithm{Link-Cut Tree}{algo/linkcut.cpp}
+	\input{tex/gena.tex}
+	\addtex{Tree hash}{tex/tree_hash.tex}
+	\addalgorithm{Weighted Matching}{algo/weightedmatching.cpp}
+	\addalgorithm{Berlekamp-Massey}{algo/bm.cpp}
+	\includegraphics[scale=0.75,angle=90]{pics/confrac.png}
+	\subsection{Integrals}
+	\onecolumn
+	\includepdf[angle=90,scale=0.9,pages=-,pagecommand={\pagestyle{fancy}}]{pdf/integralTable.pdf}
+	\addtex{Hexagon}{tex/hexagon.tex}
+	\newpage
+	\includegraphics[scale=0.6,angle=90]{pics/adamant.jpg}
+
+\end{document}

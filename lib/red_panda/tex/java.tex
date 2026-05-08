@@ -1,0 +1,28 @@
+\begin{minted}{java}
+
+class FastReader {
+    BufferedReader br;
+    StringTokenizer tk;
+
+    FastReader(InputStreamReader ir) {
+        br = new BufferedReader(ir);
+    }
+
+    String next() {
+        while ((tk == null) || (!tk.hasMoreElements())) {
+            tk = new StringTokenizer(nextLine());
+        }
+        return tk.nextToken();
+    }
+    String nextLine() {
+        try {
+            return br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+}
+
+\end{minted}

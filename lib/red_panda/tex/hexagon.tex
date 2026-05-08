@@ -1,0 +1,6 @@
+\begin{tikzpicture}
+  \foreach \i in {0,...,8}
+  \foreach \j in {0,...,8} {
+  \foreach \a in {0,120,-120} \draw (3*\i,2*sin{60}*\j) -- +(\a:1);
+  \foreach \a in {0,120,-120} \draw (3*\i+3*cos{60},2*sin{60}*\j+sin{60}) -- +(\a:1);}
+\end{tikzpicture}
